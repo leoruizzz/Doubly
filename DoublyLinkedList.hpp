@@ -87,6 +87,19 @@ public:
         }
     }
 
+    int findData(T data) {
+        Node<T>* current = head;
+        int currentIndex = 0;
+        while (current != nullptr){
+            if (current -> data == data) {
+                return currentIndex;
+            }
+            current = current->next;
+            currentIndex++;
+        }
+        return -1;
+    
+    }
     void updateAt(int index, T newData) {
         if (index < 0 || index >= size) {
             throw out_of_range("Index out of range");
@@ -178,6 +191,8 @@ public:
             current = current->next;
         }
     }
+
+    
 
     void duplicate() {
         Node<T>* current = head;

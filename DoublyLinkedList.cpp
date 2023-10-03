@@ -1,13 +1,10 @@
 #include <iostream>
 #include "DoublyLinkedList.hpp" 
+#include <stdexcept>
 
 int main() {
     DoublylinkedList<int> myList;
-
-
     int d, i, c, newD;
-
-
     bool success;
 
 
@@ -127,7 +124,7 @@ int main() {
                 std::cout << "\nEnter the index of the element you want to retrieve: ";
                 std::cin >> i;
                 try {
-                    data = myList[i];
+                    d = myList[i];
                     std::cout << "The value of the element is: " << data << std::endl;
                 } catch(const out_of_range& e) {
                     std::cerr << "Error: " << e.what() << std::endl;
